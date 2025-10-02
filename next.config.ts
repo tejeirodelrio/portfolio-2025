@@ -5,3 +5,12 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
+
+
+// next.config.js
+module.exports = {
+  future: {
+    webpack5: true,
+  },
+  target: 'serverless'
+}
