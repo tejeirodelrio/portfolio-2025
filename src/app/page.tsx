@@ -19,6 +19,7 @@ export default function Portfolio() {
   const [darkMode, setDarkMode] = useState(true);
   const [activeSection, setActiveSection] = useState("about");
   const [menuOpen, setMenuOpen] = useState(false);
+  const [showAllExperience, setShowAllExperience] = useState(false);
 
   useEffect(() => {
     if (darkMode) {
@@ -95,28 +96,28 @@ export default function Portfolio() {
     },
     {
       role: "Salesforce Platform Lead & Technical Architect",
-      company: "Brchitecer Ingelheim",
+      company: "Boehringer Ingelheim",
       period: "Apr 2021 - Mar 2022",
       description:
         "Owned platform governance and standards, led platform operations, drove automation and DevOps, and coordinated with partners/stakeholders.",
     },
     {
-      role: "Salesforce Platform Architect European Partners",
-      company: "Coca-Cola PARTNERS",
+      role: "Salesforce Platform Architect",
+      company: "Coca-Cola Europacific Partners",
       period: "Jan 2018 - Nov 2020",
       description:
         "Ensured scalable multi‑org platform (60k+ users), improved release quality, redefined standards/frameworks, and led key portal/mobile projects.",
     },
     {
       role: "Salesforce Solution Architect",
-      company: "AncajteckM (Consultia)",
+      company: "Omega CRM",
       period: "Sep 2015 - Dec 2017",
       description:
         "Trusted advisor and Scrum Master; delivered Sales/Service/Analytics implementations, integrations, and pre‑sales solutions for multiple clients.",
     },
     {
       role: "Salesforce Consultant",
-      company: "Axa Assistance",
+      company: "Consultia IT (Axa Assistance)",
       period: "Oct 2014 - Sep 2015",
       description:
         "Owned Service Cloud environment, delivered Communities/Sites features, built integrations, and trained stakeholders.",
@@ -127,6 +128,13 @@ export default function Portfolio() {
       period: "Mar 2013 - Oct 2014",
       description:
         "Supported Veeva CRM roll‑out, enhanced CRM (sharing, profiles, Apex/Visualforce), built Oracle integrations, and trained EU users.",
+    },
+    {
+      role: "Software Architecture",
+      company: "Accenture (FREMAP)",
+      period: "Nov 2009 - May 2014",
+      description:
+        "Responsible for legacy architecture modernization and new web architecture development. Windows and Linux administration",
     },
   ];
 
@@ -397,18 +405,34 @@ export default function Portfolio() {
               Professional Experience
             </h2>
             <div className="space-y-8">
-              {experience.map((exp, index) => (
+              {(showAllExperience ? experience : experience.slice(0, 3)).map((exp, index) => (
                 <div
                   key={index}
                   className="border-l-4 border-blue-400 pl-6 py-4"
                 >
-                  <h3 className="text-3xl font-semibold">{exp.role}</h3>
-                  <p className="text-blue-400 mb-2">
+                  <h3 className="text-2xl font-semibold">{exp.role}</h3>
+                  <p className="text-blue-400 mb-2 text-lg">
                     {exp.company} • {exp.period}
                   </p>
-                  <p className="text-gray-80 dark:text-gray-40">{exp.description}</p>
+                  <p className="text-gray-80 dark:text-gray-40 text-base">{exp.description}</p>
                 </div>
               ))}
+              {!showAllExperience && experience.length > 3 && (
+                <button
+                  onClick={() => setShowAllExperience(true)}
+                  className="mt-8 px-6 py-3 rounded-lg bg-surface hover:bg-surface-hover border border-surface-border text-surface-foreground transition-all duration-300 hover:shadow-card-lg dark:bg-surface-dark dark:hover:bg-surface-dark-hover dark:border-surface-dark-border dark:text-surface-dark-foreground w-full"
+                >
+                  Show More Experience
+                </button>
+              )}
+              {showAllExperience && (
+                <button
+                  onClick={() => setShowAllExperience(false)}
+                  className="mt-8 px-6 py-3 rounded-lg bg-surface hover:bg-surface-hover border border-surface-border text-surface-foreground transition-all duration-300 hover:shadow-card-lg dark:bg-surface-dark dark:hover:bg-surface-dark-hover dark:border-surface-dark-border dark:text-surface-dark-foreground w-full"
+                >
+                  Show Less
+                </button>
+              )}
             </div>
           </div>
         </section>
@@ -428,14 +452,14 @@ export default function Portfolio() {
               {skillsByCategory.map((cat) => (
                 <div
                   key={cat.title}
-                  className="rounded-xl p-6 bg-white border border-gray-200 text-gray-90 dark:bg-gray-900 dark:border-gray-800 dark:text-white"
+                  className="rounded-xl p-6 bg-surface hover:bg-surface-hover border border-surface-border text-surface-foreground shadow-card-sm transition-all duration-300 hover:shadow-card-lg hover:scale-105 dark:bg-surface-dark dark:hover:bg-surface-dark-hover dark:border-surface-dark-border dark:text-surface-dark-foreground"
                 >
                   <h3 className="text-2xl font-semibold mb-4">{cat.title}</h3>
                   <div className="flex flex-wrap gap-2">
                     {cat.items.map((skill) => (
                       <span
                         key={skill}
-                        className="px-3 py-1 rounded-full text-sm bg-blue-100 text-blue-700 dark:bg-blue-500/20 dark:text-blue-300"
+                        className="px-3 py-1 rounded-full text-sm bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 hover:border-primary/30 dark:bg-primary/20 dark:text-primary dark:border-primary/30 dark:hover:bg-primary/30 dark:hover:border-primary/40 transition-colors"
                       >
                         {skill}
                       </span>
@@ -461,9 +485,9 @@ export default function Portfolio() {
               {projects.map((project, index) => (
                 <div
                   key={index}
-                  className="rounded-xl p-6 transition-all hover:scale-105 duration-300 bg-white border border-gray-200 hover:bg-gray-50 text-gray-90 dark:bg-gray-900 dark:border-gray-800 dark:hover:bg-gray-800 dark:text-white"
+                  className="rounded-xl p-6 bg-surface hover:bg-surface-hover border border-surface-border text-surface-foreground shadow-card-sm transition-all duration-300 hover:shadow-card-lg hover:scale-105 dark:bg-surface-dark dark:hover:bg-surface-dark-hover dark:border-surface-dark-border dark:text-surface-dark-foreground"
                 >
-                  <h3 className="text-3xl font-semibold mb-3 text-gray-90 dark:text-white">
+                  <h3 className="text-3xl font-semibold mb-3">
                     {project.title}
                   </h3>
                   <p className="text-gray-800 dark:text-gray-400 mb-4">{project.description}</p>
@@ -471,18 +495,12 @@ export default function Portfolio() {
                     {project.tech.map((tech) => (
                       <span
                         key={tech}
-                        className="px-3 py-1 rounded-full text-xs bg-blue-100 text-blue-700 dark:bg-blue-500/20 dark:text-blue-400"
+                        className="px-3 py-1 rounded-full text-xs bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 hover:border-primary/30 dark:bg-primary/20 dark:text-primary dark:border-primary/30 dark:hover:bg-primary/30 dark:hover:border-primary/40 transition-colors"
                       >
                         {tech}
                       </span>
                     ))}
                   </div>
-                  <a
-                    href={project.link}
-                    className="flex items-center gap-2 text-blue-700 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300"
-                  >
-                    View project <ExternalLink size={16} />
-                  </a>
                 </div>
               ))}
             </div>
@@ -493,7 +511,7 @@ export default function Portfolio() {
 
       {/* Contact Section */}
       <section
-        className={`py-20 px-6 snap-start min-h-screen flex items-center transition-all duration-500 ${sectionTransitionClass("contact")}`}
+        className={`py-20 pb-32 px-6 snap-start min-h-screen flex items-center transition-all duration-500 ${sectionTransitionClass("contact")}`}
         id="contact"
       >
           <div className="max-w-6xl mx-auto">
@@ -529,6 +547,13 @@ export default function Portfolio() {
                   className="p-3 rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors"
                 >
                   <Linkedin size={24} />
+                  
+                </a>
+                <a
+                  href="mailto:hola@manueltejeiro.com"
+                  className="p-3 rounded-lg transition-colors bg-gray-100 hover:bg-gray-200 text-gray-90 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-white"
+                >
+                  <Mail size={24} />
                 </a>
               </div>
             </div>
@@ -536,7 +561,7 @@ export default function Portfolio() {
         </section>
 
       {/* Footer */}
-      <footer className="border-t border-gray-800 py-8 mt-20">
+      <footer className="fixed bottom-0 left-0 right-0 border-t border-gray-800 py-4 bg-white/80 dark:bg-black/80 backdrop-blur-lg z-40">
         <div className="max-w-6xl mx-auto px-6 text-center text-gray-400">
           <p className="text-gray-700 dark:text-gray-400">© 2025 Manuel Tejeiro Del Río. All rights reserved.</p>
         </div>

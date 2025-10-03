@@ -1,26 +1,53 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  /* Base theme colors */
+  --background: #f3fbff;
+  --foreground: #042236;
+  --muted: #e6f7ff;
+  --muted-foreground: #033a56;
+  --primary: #0284c7;
+  --accent: #3b82f6;
+  --border: #c6eaf9;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Surface colors */
+  --surface: #ffffff;
+  --surface-foreground: #111827;
+  --surface-border: #e5e7eb;
+  --surface-hover: #f3f4f6;
+
+  /* Shadows */
+  --shadow-card-sm: 0 1px 4px rgba(2,132,199,0.06);
+  --shadow-card-lg: 0 8px 24px rgba(2,132,199,0.12);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #0b1220;
+    --foreground: #e5e7eb;
+    --muted: #1f2937;
+    --muted-foreground: #9ca3af;
+    --primary: #38bdf8;
+    --accent: #60a5fa;
+    --border: #1f2937;
+
+    --surface: #0b1220;
+    --surface-foreground: #e5e7eb;
+    --surface-border: #1f2937;
+    --surface-hover: #0f1724;
   }
+}
+
+/* Font settings */
+:root {
+  --font-sans: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: var(--font-geist-mono), 'SF Mono', 'Menlo', monospace;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
