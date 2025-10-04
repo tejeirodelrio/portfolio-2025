@@ -33,7 +33,7 @@ export default function Portfolio() {
   }, [darkMode]);
 
   const sectionTransitionClass = (id: string) =>
-    activeSection === id
+    id === "about" || activeSection === id
       ? "opacity-100 translate-y-0"
       : "opacity-40 translate-y-4";
 
@@ -46,7 +46,7 @@ export default function Portfolio() {
           .filter((e) => e.isIntersecting)
           .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
         const top = visible[0]?.target as HTMLElement | undefined;
-        if (top?.id) {
+        if (top?.id && top.id !== "about") {
           setActiveSection(top.id);
         }
       },
@@ -197,12 +197,12 @@ export default function Portfolio() {
               <p className="text-2xl md:text-3xl text-gray-600 dark:text-gray-400 mb-8">
                 Salesforce Architect
               </p>
-              <div className="flex gap-4">
+              <div className="flex gap-4 opacity-100 relative z-10">
                 <a
                   href="https://github.com/tejeirodelrio"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 rounded-lg transition-colors bg-gray-100 hover:bg-gray-200 text-gray-90 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-white"
+                  className="p-3 rounded-lg transition-colors bg-gray-100 hover:bg-gray-200 text-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-gray-300"
                 >
                   <Github size={24} />
                 </a>
@@ -210,13 +210,13 @@ export default function Portfolio() {
                   href="https://www.linkedin.com/in/manueltejeirodelrio/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 rounded-lg transition-colors bg-gray-100 hover:bg-gray-200 text-gray-90 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-white"
+                  className="p-3 rounded-lg transition-colors bg-gray-100 hover:bg-gray-200 text-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-gray-300"
                 >
                   <Linkedin size={24} />
                 </a>
                 <a
                   href="mailto:hola@manueltejeiro.com"
-                  className="p-3 rounded-lg transition-colors bg-gray-100 hover:bg-gray-200 text-gray-90 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-white"
+                  className="p-3 rounded-lg transition-colors bg-gray-100 hover:bg-gray-200 text-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-gray-300"
                 >
                   <Mail size={24} />
                 </a>
@@ -404,12 +404,12 @@ export default function Portfolio() {
                 </a>
               </p>
 
-              <div className="flex gap-4">
+              <div className="flex gap-4 opacity-100 relative z-10">
                 <a
                   href="https://github.com/tejeirodelrio"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 rounded-lg transition-colors bg-gray-100 hover:bg-gray-200 text-gray-90 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-white"
+                  className="p-3 rounded-lg transition-colors bg-gray-100 hover:bg-gray-200 text-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-gray-300"
                 >
                   <Github size={24} />
                 </a>
@@ -417,13 +417,13 @@ export default function Portfolio() {
                   href="https://www.linkedin.com/in/manueltejeirodelrio/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 rounded-lg transition-colors bg-gray-100 hover:bg-gray-200 text-gray-90 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-white"
+                  className="p-3 rounded-lg transition-colors bg-gray-100 hover:bg-gray-200 text-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-gray-300"
                 >
                   <Linkedin size={24} />
                 </a>
                 <a
                   href="mailto:hola@manueltejeiro.com"
-                  className="p-3 rounded-lg transition-colors bg-gray-100 hover:bg-gray-200 text-gray-90 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-white"
+                  className="p-3 rounded-lg transition-colors bg-gray-100 hover:bg-gray-200 text-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-gray-300"
                 >
                   <Mail size={24} />
                 </a>
