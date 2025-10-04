@@ -15,11 +15,14 @@ import {
   X,
 } from "lucide-react";
 
+import { Experience, projects, experience, skillsByCategory } from "@/data/content";
+
 export default function Portfolio() {
   const [darkMode, setDarkMode] = useState(true);
   const [activeSection, setActiveSection] = useState("about");
   const [menuOpen, setMenuOpen] = useState(false);
   const [showAllExperience, setShowAllExperience] = useState(false);
+  const [selectedExperience, setSelectedExperience] = useState<Experience | null>(null);
 
   useEffect(() => {
     if (darkMode) {
@@ -58,152 +61,11 @@ export default function Portfolio() {
     return () => observer.disconnect();
   }, []);
 
-  const projects = [
-    {
-      title: "Salesforce",
-      description:  "Senior Solution Architect - EMEA Practices",
-      tech: ["Field Service", "Nonprofit Cloud", "Education Cloud"],
-      link: "#",
-    },
-    {
-      title: "Boehringer Ingelheim",
-      description: "Platform Architect",
-      tech: ["Veeva CRM", "Service Cloud", "Einstein Analytics", "Salesforce Platform"],
-      link: "#",
-    },
-    {
-      title: "Coca-Cola Europacific Partners",
-      description: "Platform Architect",
-      tech: ["Salesforce Platform", "Sales Cloud", "Service Cloud", "Experience Cloud", "Marketing Cloud", "Mulesoft", "Dell Boomi", "Informatica Cloud","Heroku"],
-      link: "#",
-    },
-  ];
 
-  const experience = [
-    {
-      role: "Senior Salesforce Solution Architect, Field Service & Voice, EMEA Practices",
-      company: "Salesforce",
-      period: "Aug 2025 - Present",
-      description:
-        "Digital transformation, roadmaps and architecture, best-practice guidance across Education/Non Profit, integration & data strategy, governance.",
-    },
-    {
-      role: "Senior Salesforce Solution Architect, EMEA Social Impact Practice",
-      company: "Salesforce",
-      period: "Mar 2022 - Aug 2025",
-      description:
-        "Built architecture blueprints, provided platform expertise, and guided integration/data and governance for impact-focused customers.",
-    },
-    {
-      role: "Salesforce Platform Lead & Technical Architect",
-      company: "Boehringer Ingelheim",
-      period: "Apr 2021 - Mar 2022",
-      description:
-        "Owned platform governance and standards, led platform operations, drove automation and DevOps, and coordinated with partners/stakeholders.",
-    },
-    {
-      role: "Salesforce Platform Architect",
-      company: "Coca-Cola Europacific Partners",
-      period: "Jan 2018 - Nov 2020",
-      description:
-        "Ensured scalable multi‑org platform (60k+ users), improved release quality, redefined standards/frameworks, and led key portal/mobile projects.",
-    },
-    {
-      role: "Salesforce Solution Architect",
-      company: "Omega CRM",
-      period: "Sep 2015 - Dec 2017",
-      description:
-        "Trusted advisor and Scrum Master; delivered Sales/Service/Analytics implementations, integrations, and pre‑sales solutions for multiple clients.",
-    },
-    {
-      role: "Salesforce Consultant",
-      company: "Consultia IT (Axa Assistance)",
-      period: "Oct 2014 - Sep 2015",
-      description:
-        "Owned Service Cloud environment, delivered Communities/Sites features, built integrations, and trained stakeholders.",
-    },
-    {
-      role: "Veeva & Salesforce Admin",
-      company: "Accenture (Novartis)",
-      period: "Mar 2013 - Oct 2014",
-      description:
-        "Supported Veeva CRM roll‑out, enhanced CRM (sharing, profiles, Apex/Visualforce), built Oracle integrations, and trained EU users.",
-    },
-    {
-      role: "Software Architecture",
-      company: "Accenture (FREMAP)",
-      period: "Nov 2009 - May 2014",
-      description:
-        "Responsible for legacy architecture modernization and new web architecture development. Windows and Linux administration",
-    },
-  ];
 
-  const skillsByCategory: { title: string; items: string[] }[] = [
-    {
-      title: "Salesforce",
-      items: [
-        "Sales Cloud",
-        "Service Cloud",
-        "Experience Cloud",
-        "Field Service",
-        "Nonprofit Cloud",
-        "Education Cloud",
-        "Apex",
-        "Lightning Web Components (LWC)",
-        "Flows",
-        "Platform Events",
-        "Integration (REST/SOAP/OAuth)",
-        "Data Modeling & Security",
-        "Identity & Access (SSO/SAML/OIDC)",
-      ],
-    },
-    {
-      title: "Development",
-      items: [
-        "JavaScript",
-        "TypeScript",
-        "React",
-        "Node.js",
-        "Next.js",
-        "REST APIs",
-        "GraphQL",
-        "Testing (Jest)",
-        "CI/CD",
-      ],
-    },
-    {
-      title: "Database",
-      items: [
-        "SQL",
-        "PostgreSQL",
-        "MongoDB",
-        "ETL",
-        "Data Modeling",
-      ],
-    },
-    {
-      title: "Cloud",
-      items: [
-        "Salesforce Platform",
-        "AWS",
-        "Azure",
-        "Heroku",
-        "MuleSoft",
-        "GitHub Actions",
-      ],
-    },
-    {
-      title: "Project Management",
-      items: [
-        "Agile",
-        "Scrum",
-        "Kanban",
-        "SAFe",
-        "CAPM",
-        "Stakeholder Management",
-      ],
-    },
-  ];
+
+
+
 
   return (
     <div
@@ -332,7 +194,7 @@ export default function Portfolio() {
               <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
                 Hi, I&apos;m Manuel
               </h1>
-              <p className="text-2xl md:text-3xl text-gray-90 dark:text-gray-90 mb-8">
+              <p className="text-2xl md:text-3xl text-gray-600 dark:text-gray-400 mb-8">
                 Salesforce Architect
               </p>
               <div className="flex gap-4">
@@ -373,7 +235,7 @@ export default function Portfolio() {
           </div>
             <div className="grid md:grid-cols-1 gap-12">
               <div className="space-y-6">
-                <p className="text-xl text-gray-90 dark:text-gray-90">
+                <p className="text-xl text-gray-600 dark:text-gray-400">
                   With 15+ years of IT experience and 11+ focused in Salesforce,
                   I am passionate about helping customers achieve their vision
                   and goals using the Salesforce platform. As an experienced
@@ -404,23 +266,34 @@ export default function Portfolio() {
               <Briefcase className="text-blue-400" />
               Professional Experience
             </h2>
-            <div className="space-y-8">
-              {(showAllExperience ? experience : experience.slice(0, 3)).map((exp, index) => (
-                <div
-                  key={index}
-                  className="border-l-4 border-blue-400 pl-6 py-4"
-                >
-                  <h3 className="text-2xl font-semibold">{exp.role}</h3>
-                  <p className="text-blue-400 mb-2 text-lg">
-                    {exp.company} • {exp.period}
-                  </p>
-                  <p className="text-gray-80 dark:text-gray-40 text-base">{exp.description}</p>
-                </div>
-              ))}
-              {!showAllExperience && experience.length > 3 && (
+            <div className="space-y-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {(showAllExperience ? experience : experience.slice(0, 4)).map((exp, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setSelectedExperience(exp)}
+                    className="group p-6 bg-surface hover:bg-surface-hover border border-surface-border text-surface-foreground transition-all duration-300 hover:shadow-card-lg dark:bg-surface-dark dark:hover:bg-surface-dark-hover dark:border-surface-dark-border dark:text-surface-dark-foreground rounded-xl text-left"
+                  >
+                    <h3 className="text-2xl font-bold text-blue-600 dark:text-blue-400 mb-2 group-hover:text-blue-500">
+                      {exp.company}
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-400 font-medium mb-1">
+                      {exp.role}
+                    </p>
+                    <p className="text-sm text-gray-500 dark:text-gray-500">
+                      {exp.period}
+                    </p>
+                    <div className="mt-4 flex items-center text-blue-500 text-sm font-medium">
+                      View Details
+                      <ExternalLink size={16} className="ml-1" />
+                    </div>
+                  </button>
+                ))}
+              </div>
+              {!showAllExperience && experience.length > 4 && (
                 <button
                   onClick={() => setShowAllExperience(true)}
-                  className="mt-8 px-6 py-3 rounded-lg bg-surface hover:bg-surface-hover border border-surface-border text-surface-foreground transition-all duration-300 hover:shadow-card-lg dark:bg-surface-dark dark:hover:bg-surface-dark-hover dark:border-surface-dark-border dark:text-surface-dark-foreground w-full"
+                  className="mt-8 px-6 py-3 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-blue-400 dark:hover:border-blue-400 transition-all duration-300 w-full text-gray-600 dark:text-gray-400"
                 >
                   Show More Experience
                 </button>
@@ -428,7 +301,7 @@ export default function Portfolio() {
               {showAllExperience && (
                 <button
                   onClick={() => setShowAllExperience(false)}
-                  className="mt-8 px-6 py-3 rounded-lg bg-surface hover:bg-surface-hover border border-surface-border text-surface-foreground transition-all duration-300 hover:shadow-card-lg dark:bg-surface-dark dark:hover:bg-surface-dark-hover dark:border-surface-dark-border dark:text-surface-dark-foreground w-full"
+                  className="mt-8 px-6 py-3 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-blue-400 dark:hover:border-blue-400 transition-all duration-300 w-full text-gray-600 dark:text-gray-400"
                 >
                   Show Less
                 </button>
@@ -454,7 +327,7 @@ export default function Portfolio() {
                   key={cat.title}
                   className="rounded-xl p-6 bg-surface hover:bg-surface-hover border border-surface-border text-surface-foreground shadow-card-sm transition-all duration-300 hover:shadow-card-lg hover:scale-105 dark:bg-surface-dark dark:hover:bg-surface-dark-hover dark:border-surface-dark-border dark:text-surface-dark-foreground"
                 >
-                  <h3 className="text-2xl font-semibold mb-4">{cat.title}</h3>
+                  <h3 className="text-2xl font-bold text-blue-600 dark:text-blue-400 mb-4">{cat.title}</h3>
                   <div className="flex flex-wrap gap-2">
                     {cat.items.map((skill) => (
                       <span
@@ -487,15 +360,15 @@ export default function Portfolio() {
                   key={index}
                   className="rounded-xl p-6 bg-surface hover:bg-surface-hover border border-surface-border text-surface-foreground shadow-card-sm transition-all duration-300 hover:shadow-card-lg hover:scale-105 dark:bg-surface-dark dark:hover:bg-surface-dark-hover dark:border-surface-dark-border dark:text-surface-dark-foreground"
                 >
-                  <h3 className="text-3xl font-semibold mb-3">
+                  <h3 className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-3">
                     {project.title}
                   </h3>
-                  <p className="text-gray-800 dark:text-gray-400 mb-4">{project.description}</p>
+                  <p className="text-gray-600 dark:text-gray-400 mb-4">{project.description}</p>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tech.map((tech) => (
                       <span
                         key={tech}
-                        className="px-3 py-1 rounded-full text-xs bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 hover:border-primary/30 dark:bg-primary/20 dark:text-primary dark:border-primary/30 dark:hover:bg-primary/30 dark:hover:border-primary/40 transition-colors"
+                        className="px-3 py-1 rounded-full text-sm bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 hover:border-primary/30 dark:bg-primary/20 dark:text-primary dark:border-primary/30 dark:hover:bg-primary/30 dark:hover:border-primary/40 transition-colors"
                       >
                         {tech}
                       </span>
@@ -519,7 +392,7 @@ export default function Portfolio() {
               <Mail className="text-blue-400" />
               Contact
             </h2>
-            <div className="space-y-6 text-gray-90 dark:text-gray-90">
+            <div className="space-y-6 text-gray-600 dark:text-gray-400">
               <p>
                 Feel free to reach out via email:
                 {" "}
@@ -531,12 +404,12 @@ export default function Portfolio() {
                 </a>
               </p>
 
-              <div className="flex gap-4 text-gray-300 dark:text-gray-90">
+              <div className="flex gap-4">
                 <a
                   href="https://github.com/tejeirodelrio"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors"
+                  className="p-3 rounded-lg transition-colors bg-gray-100 hover:bg-gray-200 text-gray-90 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-white"
                 >
                   <Github size={24} />
                 </a>
@@ -544,10 +417,9 @@ export default function Portfolio() {
                   href="https://www.linkedin.com/in/manueltejeirodelrio/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors"
+                  className="p-3 rounded-lg transition-colors bg-gray-100 hover:bg-gray-200 text-gray-90 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-white"
                 >
                   <Linkedin size={24} />
-                  
                 </a>
                 <a
                   href="mailto:hola@manueltejeiro.com"
@@ -561,11 +433,38 @@ export default function Portfolio() {
         </section>
 
       {/* Footer */}
-      <footer className="fixed bottom-0 left-0 right-0 border-t border-gray-800 py-4 bg-white/80 dark:bg-black/80 backdrop-blur-lg z-40">
+      <footer className="fixed bottom-0 left-0 right-0 border-t border-gray-800 py-2 bg-white/80 dark:bg-black/80 backdrop-blur-lg z-40">
         <div className="max-w-6xl mx-auto px-6 text-center text-gray-400">
-          <p className="text-gray-700 dark:text-gray-400">© 2025 Manuel Tejeiro Del Río. All rights reserved.</p>
+          <p className="text-gray-700 dark:text-gray-400 text-xs">© 2025 Manuel Tejeiro Del Río. All rights reserved.</p>
         </div>
       </footer>
+      {/* Experience Modal */}
+      {selectedExperience && (
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+          <div className="bg-white dark:bg-gray-900 rounded-lg max-w-2xl w-full p-6 relative">
+            <button
+              onClick={() => setSelectedExperience(null)}
+              className="absolute top-4 right-4 p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800"
+            >
+              <X size={20} />
+            </button>
+            <div className="mb-6">
+              <h2 className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">
+                {selectedExperience.company}
+              </h2>
+              <p className="text-xl text-gray-600 dark:text-gray-400">
+                {selectedExperience.role}
+              </p>
+              <p className="text-sm text-gray-500 dark:text-gray-500 mt-1">
+                {selectedExperience.period}
+              </p>
+            </div>
+            <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+              {selectedExperience.description}
+            </p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
