@@ -13,10 +13,10 @@ export default function SocialIcons() {
 
     return (
         <div className="flex gap-5 items-center">
-            <a href={links.trailhead} target="_blank" rel="noopener noreferrer">
+            <a href={links.linkedin} target="_blank" rel="noopener noreferrer">
                 <Image
                     src="/icons/linkedin.svg"
-                    alt="Trailhead"
+                    alt="LinkedIn"
                     width={24}
                     height={24}
                     className={iconClass}
@@ -40,10 +40,10 @@ export default function SocialIcons() {
                     className={iconClass}
                 />
             </a>
-            <a href={links.trailhead} target="_blank" rel="noopener noreferrer">
+            <a href={links.github} target="_blank" rel="noopener noreferrer">
                 <Image
                     src="/icons/github.svg"
-                    alt="Trailhead"
+                    alt="GitHub"
                     width={24}
                     height={24}
                     className={iconClass}

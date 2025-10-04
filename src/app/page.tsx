@@ -396,7 +396,7 @@ export default function Portfolio() {
               onClick={() => setSelectedExperience(null)}
               className="absolute top-4 right-4 p-2 rounded-full hover:bg-gray-500 dark:hover:bg-white-500"
             >
-              <X size={20} />
+              <X stroke="orange" size={20} />
             </button>
             <div className="mb-6">
               <h2 className="text-3xl font-bold text-blue-500 dark:text-blue-500 mb-2">
