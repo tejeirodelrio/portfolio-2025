@@ -1,9 +1,9 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import SocialIcons from "@/components/SocialIcons";
 import Image from "next/image";
+import { Experience, projects, experience, skillsByCategory } from "@/data/content";
 import {
-  Github,
-  Linkedin,
   Mail,
   Moon,
   Sun,
@@ -14,8 +14,6 @@ import {
   Menu,
   X,
 } from "lucide-react";
-
-import { Experience, projects, experience, skillsByCategory } from "@/data/content";
 
 export default function Portfolio() {
   const [darkMode, setDarkMode] = useState(true);
@@ -194,33 +192,10 @@ export default function Portfolio() {
               <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
                 Hi, I&apos;m Manuel
               </h1>
-              <p className="text-2xl md:text-3xl text-gray-600 dark:text-gray-400 mb-8">
+              <p className="text-2xl md:text-3xl text-gray-600 dark:text-gray-500 mb-8">
                 Salesforce Architect
               </p>
-              <div className="flex gap-4 opacity-100 relative z-10">
-                <a
-                  href="https://github.com/tejeirodelrio"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-3 rounded-lg transition-colors bg-gray-100 hover:bg-gray-200 text-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-gray-300"
-                >
-                  <Github size={24} />
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/manueltejeirodelrio/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-3 rounded-lg transition-colors bg-gray-100 hover:bg-gray-200 text-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-gray-300"
-                >
-                  <Linkedin size={24} />
-                </a>
-                <a
-                  href="mailto:hola@manueltejeiro.com"
-                  className="p-3 rounded-lg transition-colors bg-gray-100 hover:bg-gray-200 text-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-gray-300"
-                >
-                  <Mail size={24} />
-                </a>
-              </div>
+              <SocialIcons />
             </div>
             <div className="w-64 h-64 rounded-full overflow-hidden ring-2 ring-blue-400/30">
               <Image
@@ -235,7 +210,7 @@ export default function Portfolio() {
           </div>
             <div className="grid md:grid-cols-1 gap-12">
               <div className="space-y-6">
-                <p className="text-xl text-gray-600 dark:text-gray-400">
+                <p className="text-xl text-gray-600 dark:text-gray-500">
                   With 15+ years of IT experience and 11+ focused in Salesforce,
                   I am passionate about helping customers achieve their vision
                   and goals using the Salesforce platform. As an experienced
@@ -277,7 +252,7 @@ export default function Portfolio() {
                     <h3 className="text-2xl font-bold text-blue-600 dark:text-blue-400 mb-2 group-hover:text-blue-500">
                       {exp.company}
                     </h3>
-                    <p className="text-gray-600 dark:text-gray-400 font-medium mb-1">
+                    <p className="text-gray-600 dark:text-gray-500 font-medium mb-1">
                       {exp.role}
                     </p>
                     <p className="text-sm text-gray-500 dark:text-gray-500">
@@ -293,7 +268,7 @@ export default function Portfolio() {
               {!showAllExperience && experience.length > 4 && (
                 <button
                   onClick={() => setShowAllExperience(true)}
-                  className="mt-8 px-6 py-3 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-blue-400 dark:hover:border-blue-400 transition-all duration-300 w-full text-gray-600 dark:text-gray-400"
+                  className="mt-8 px-6 py-3 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-blue-400 dark:hover:border-blue-400 transition-all duration-300 w-full text-gray-600 dark:text-gray-500"
                 >
                   Show More Experience
                 </button>
@@ -301,7 +276,7 @@ export default function Portfolio() {
               {showAllExperience && (
                 <button
                   onClick={() => setShowAllExperience(false)}
-                  className="mt-8 px-6 py-3 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-blue-400 dark:hover:border-blue-400 transition-all duration-300 w-full text-gray-600 dark:text-gray-400"
+                  className="mt-8 px-6 py-3 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-blue-400 dark:hover:border-blue-400 transition-all duration-300 w-full text-gray-600 dark:text-gray-500"
                 >
                   Show Less
                 </button>
@@ -363,7 +338,7 @@ export default function Portfolio() {
                   <h3 className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-3">
                     {project.title}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-400 mb-4">{project.description}</p>
+                  <p className="text-gray-600 dark:text-gray-500 mb-4">{project.description}</p>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tech.map((tech) => (
                       <span
@@ -392,7 +367,7 @@ export default function Portfolio() {
               <Mail className="text-blue-400" />
               Contact
             </h2>
-            <div className="space-y-6 text-gray-600 dark:text-gray-400">
+            <div className="space-y-6 text-gray-600 dark:text-gray-500">
               <p>
                 Feel free to reach out via email:
                 {" "}
@@ -405,28 +380,7 @@ export default function Portfolio() {
               </p>
 
               <div className="flex gap-4 opacity-100 relative z-10">
-                <a
-                  href="https://github.com/tejeirodelrio"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-3 rounded-lg transition-colors bg-gray-100 hover:bg-gray-200 text-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-gray-300"
-                >
-                  <Github size={24} />
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/manueltejeirodelrio/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-3 rounded-lg transition-colors bg-gray-100 hover:bg-gray-200 text-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-gray-300"
-                >
-                  <Linkedin size={24} />
-                </a>
-                <a
-                  href="mailto:hola@manueltejeiro.com"
-                  className="p-3 rounded-lg transition-colors bg-gray-100 hover:bg-gray-200 text-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-gray-300"
-                >
-                  <Mail size={24} />
-                </a>
+                <SocialIcons />
               </div>
             </div>
           </div>
@@ -452,14 +406,14 @@ export default function Portfolio() {
               <h2 className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">
                 {selectedExperience.company}
               </h2>
-              <p className="text-xl text-gray-600 dark:text-gray-400">
+              <p className="text-xl text-gray-600 dark:text-gray-300">
                 {selectedExperience.role}
               </p>
               <p className="text-sm text-gray-500 dark:text-gray-500 mt-1">
                 {selectedExperience.period}
               </p>
             </div>
-            <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+            <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
               {selectedExperience.description}
             </p>
           </div>
