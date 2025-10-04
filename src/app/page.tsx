@@ -44,7 +44,7 @@ export default function Portfolio() {
           .filter((e) => e.isIntersecting)
           .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
         const top = visible[0]?.target as HTMLElement | undefined;
-        if (top?.id && top.id !== "about") {
+        if (top?.id) {
           setActiveSection(top.id);
         }
       },
@@ -61,10 +61,6 @@ export default function Portfolio() {
 
 
 
-
-
-
-
   return (
     <div
       id="scroll-container"
@@ -75,7 +71,7 @@ export default function Portfolio() {
       {/* Navigation */}
       <nav className="fixed top-0 w-full backdrop-blur-lg bg-opacity-80 border-b dark:border-gray-800 border-gray-200 z-50">
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-          <div className="text-2xl font-bold">Manuel Tejeiro Del Río</div>
+          <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">Manuel Tejeiro Del Río</div>
           <div className="flex items-center gap-3 md:gap-6">
             <button
               className="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
@@ -387,23 +383,23 @@ export default function Portfolio() {
         </section>
 
       {/* Footer */}
-      <footer className="fixed bottom-0 left-0 right-0 border-t border-gray-800 py-2 bg-white/80 dark:bg-black/80 backdrop-blur-lg z-40">
-        <div className="max-w-6xl mx-auto px-6 text-center text-gray-400">
+      <footer className="fixed bottom-0 left-0 right-0 border-t border-gray-600 py-2 backdrop-blur-lg z-40">
+        <div className="max-w-6xl mx-auto px-6 text-center">
           <p className="text-gray-700 dark:text-gray-400 text-xs">© 2025 Manuel Tejeiro Del Río. All rights reserved.</p>
         </div>
       </footer>
       {/* Experience Modal */}
       {selectedExperience && (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-white dark:bg-gray-900 rounded-lg max-w-2xl w-full p-6 relative">
+          <div className="bg-white dark:bg-gray-800 rounded-lg max-w-2xl w-full p-6 relative">
             <button
               onClick={() => setSelectedExperience(null)}
-              className="absolute top-4 right-4 p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800"
+              className="absolute top-4 right-4 p-2 rounded-full hover:bg-gray-500 dark:hover:bg-white-500"
             >
               <X size={20} />
             </button>
             <div className="mb-6">
-              <h2 className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">
+              <h2 className="text-3xl font-bold text-blue-500 dark:text-blue-500 mb-2">
                 {selectedExperience.company}
               </h2>
               <p className="text-xl text-gray-600 dark:text-gray-300">
