@@ -2,13 +2,12 @@
 import React, { useState, useEffect } from "react";
 import SocialIcons from "@/components/SocialIcons";
 import Image from "next/image";
-import { Experience, projects, experience, skillsByCategory } from "@/data/content";
+import { Experience, experience, skillsByCategory } from "@/data/content";
 import {
   Mail,
   Moon,
   Sun,
   ExternalLink,
-  Code,
   Briefcase,
   User,
   Menu,
@@ -36,7 +35,7 @@ export default function Portfolio() {
       : "opacity-40 translate-y-4";
 
   useEffect(() => {
-    const sectionIds = ["about", "experience", "skills", "projects", "contact"];
+    const sectionIds = ["about", "experience", "skills", "contact"];
     const root = document.getElementById("scroll-container") || undefined;
     const observer = new IntersectionObserver(
       (entries) => {
@@ -113,16 +112,6 @@ export default function Portfolio() {
               Skills
             </button>
             <button
-              onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
-              className={`relative hover:text-blue-600 dark:hover:text-blue-400 transition-colors ${
-                activeSection === "projects" ? "text-blue-600 dark:text-blue-400" : ""
-              } after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-full after:transition-all after:duration-300 ${
-                activeSection === "projects" ? "after:bg-blue-600 dark:after:bg-blue-400" : "after:bg-transparent"
-              }`}
-            >
-              Projects
-            </button>
-            <button
               onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
               className={`relative hover:text-blue-600 dark:hover:text-blue-400 transition-colors ${
                 activeSection === "contact" ? "text-blue-600 dark:text-blue-400" : ""
@@ -150,7 +139,6 @@ export default function Portfolio() {
                 { id: "about", label: "About" },
                 { id: "experience", label: "Experience" },
                 { id: "skills", label: "Skills" },
-                { id: "projects", label: "Projects" },
                 { id: "contact", label: "Contact" },
               ].map((item) => (
                 <button
@@ -303,7 +291,7 @@ export default function Portfolio() {
                     {cat.items.map((skill) => (
                       <span
                         key={skill}
-                        className="px-3 py-1 rounded-full text-sm bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 hover:border-primary/30 dark:bg-primary/20 dark:text-primary dark:border-primary/30 dark:hover:bg-primary/30 dark:hover:border-primary/40 transition-colors"
+                        className="px-3 py-1 border rounded-full text-sm  text-gray-600 dark:text-gray-500"
                       >
                         {skill}
                       </span>
@@ -315,43 +303,6 @@ export default function Portfolio() {
           </div>
         </section>
       
-      {/* Projects Section */}
-      <section
-        className={`py-20 px-6 snap-start min-h-screen flex items-center transition-all duration-500 ${sectionTransitionClass("projects")}`}
-        id="projects"
-      >
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-5xl font-bold mb-12 flex items-center gap-3">
-              <Code className="text-blue-400" />
-              Featured Projects
-            </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {projects.map((project, index) => (
-                <div
-                  key={index}
-                  className="rounded-xl p-6 bg-surface hover:bg-surface-hover border border-surface-border text-surface-foreground shadow-card-sm transition-all duration-300 hover:shadow-card-lg hover:scale-105 dark:bg-surface-dark dark:hover:bg-surface-dark-hover dark:border-surface-dark-border dark:text-surface-dark-foreground"
-                >
-                  <h3 className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-3">
-                    {project.title}
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-500 mb-4">{project.description}</p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tech.map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-3 py-1 rounded-full text-sm bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 hover:border-primary/30 dark:bg-primary/20 dark:text-primary dark:border-primary/30 dark:hover:bg-primary/30 dark:hover:border-primary/40 transition-colors"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-
 
       {/* Contact Section */}
       <section
