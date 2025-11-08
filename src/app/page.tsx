@@ -21,13 +21,6 @@ export default function Portfolio() {
   const [showAllExperience, setShowAllExperience] = useState(false);
   const [selectedExperience, setSelectedExperience] = useState<Experience | null>(null);
 
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  }, [darkMode]);
 
   const sectionTransitionClass = (id: string) =>
     id === "about" || activeSection === id
