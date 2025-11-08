@@ -12,10 +12,6 @@ const nextConfig: NextConfig & { experimental?: Record<string, unknown> } = {
   // the site as static files on Netlify without using server functions.
   output: "export",
   reactStrictMode: true,
-  experimental: {
-    // You are using the app router (src/app), keep this enabled
-    appDir: true,
-  },
   // Avoid enabling Next's built-in image optimization handlers during
   // the first deploy to Netlify. This is the safest option for a
   // simple portfolio site. Remove or change if you want Netlify to

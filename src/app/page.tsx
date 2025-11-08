@@ -174,7 +174,7 @@ export default function Portfolio() {
           <div className="flex flex-col md:flex-row items-center gap-12 mb-12">
             <div className="flex-1">
               <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-teal-400 to-teal-600 bg-clip-text text-transparent">
-                Hi, I'm Manuel
+                Hi, I&apos;Manuel
               </h1>
               <p className="text-2xl md:text-3xl dark:text-gray-300 dark:text-gray-200 mb-8">
                 Salesforce Architect
