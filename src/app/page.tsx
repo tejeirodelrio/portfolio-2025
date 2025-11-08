@@ -176,7 +176,7 @@ export default function Portfolio() {
               <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-teal-400 to-teal-600 bg-clip-text text-transparent">
                 Hi, I&apos;Manuel
               </h1>
-              <p className="text-2xl md:text-3xl dark:text-gray-300 dark:text-gray-200 mb-8">
+              <p className="text-2xl md:text-3xl text-teal-500 dark:text-teal-200 mb-8">
                 Salesforce Architect
               </p>
               <SocialIcons />
@@ -194,7 +194,7 @@ export default function Portfolio() {
           </div>
             <div className="grid md:grid-cols-1 gap-12">
               <div className="space-y-6">
-                <p className="text-xl dark:text-gray-300 dark:text-gray-200">
+                <p className="text-xl">
                   With 15+ years of IT experience and 11+ focused in Salesforce,
                   I am passionate about helping customers achieve their vision
                   and goals using the Salesforce platform. As an experienced
@@ -236,10 +236,10 @@ export default function Portfolio() {
                     <h3 className="text-2xl font-bold text-teal-600 dark:text-teal-400 mb-2 group-hover:text-teal-500">
                       {exp.company}
                     </h3>
-                    <p className="dark:text-gray-300 dark:text-gray-200 font-medium mb-1">
+                    <p className="font-medium mb-1">
                       {exp.role}
                     </p>
-                    <p className="text-sm text-gray-500 dark:text-gray-200">
+                    <p className="text-sm">
                       {exp.period}
                     </p>
                     <div className="mt-4 flex items-center text-teal-500 text-sm font-medium">
@@ -341,8 +341,8 @@ export default function Portfolio() {
       </footer>
       {/* Experience Modal */}
       {selectedExperience && (
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-white dark:bg-gray-800 rounded-lg max-w-2xl w-full p-6 relative">
+        <div className="fixed inset-0 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+          <div className="rounded-lg bg-gray-200 max-w-2xl w-full p-6 relative">
             <button
               onClick={() => setSelectedExperience(null)}
               className="absolute top-4 right-4 p-2 rounded-full hover:bg-gray-500 dark:hover:bg-white-500"
@@ -353,14 +353,14 @@ export default function Portfolio() {
               <h2 className="text-3xl font-bold text-teal-500 dark:text-teal-500 mb-2">
                 {selectedExperience.company}
               </h2>
-              <p className="text-xl dark:text-gray-300 dark:text-gray-300">
+              <p className="text-gray-800 dark:text-gray-200 text-xl">
                 {selectedExperience.role}
               </p>
-              <p className="text-sm text-gray-500 dark:text-gray-200 mt-1">
+              <p className="text-gray-800 dark:text-gray-200 text-sm mt-1">
                 {selectedExperience.period}
               </p>
             </div>
-            <p className="dark:text-gray-300 dark:text-gray-300 leading-relaxed">
+            <p className="text-gray-800 dark:text-gray-200 leading-relaxed">
               {selectedExperience.description}
             </p>
           </div>
