@@ -334,22 +334,22 @@ export default function Portfolio() {
       </footer>
       {/* Experience Modal */}
       {selectedExperience && (
-        <div className="fixed inset-0 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="rounded-lg bg-gray-200 max-w-2xl w-full p-6 relative">
+        <div className="fixed inset-0 bg-black/50 dark:bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+          <div className="rounded-lg bg-white dark:bg-gray-900 max-w-2xl w-full p-6 relative shadow-lg">
             <button
               onClick={() => setSelectedExperience(null)}
-              className="absolute top-4 right-4 p-2 rounded-full hover:bg-gray-500 dark:hover:bg-white-500"
+              className="absolute top-4 right-4 p-2 rounded-full hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors"
             >
               <X stroke="teal" size={20} />
             </button>
             <div className="mb-6">
-              <h2 className="text-3xl font-bold text-teal-500 dark:text-teal-500 mb-2">
+              <h2 className="text-3xl font-bold text-teal-600 dark:text-teal-400 mb-2">
                 {selectedExperience.company}
               </h2>
               <p className="text-gray-800 dark:text-gray-200 text-xl">
                 {selectedExperience.role}
               </p>
-              <p className="text-gray-800 dark:text-gray-200 text-sm mt-1">
+              <p className="text-gray-800 dark:text-gray-400 text-sm mt-1">
                 {selectedExperience.period}
               </p>
             </div>
