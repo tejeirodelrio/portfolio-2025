@@ -127,7 +127,7 @@ export default function Portfolio() {
         {/* Mobile menu */}
         {menuOpen && (
           <div className="md:hidden border-t dark:border-gray-800 border-gray-200">
-            <div id="main-menu" className="px-6 py-3 space-y-2 bg-white/80 dark:bg-black/60 backdrop-blur">
+            <div id="main-menu" className={`px-6 py-3 space-y-2 ${darkMode ? 'bg-black/80' : 'bg-white/80'} backdrop-blur`}>
               {[
                 { id: "about", label: "About" },
                 { id: "experience", label: "Experience" },
