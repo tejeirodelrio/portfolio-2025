@@ -56,9 +56,8 @@ export default function Portfolio() {
   return (
     <div
       id="scroll-container"
-      className={`h-screen overflow-y-scroll scroll-smooth snap-y snap-mandatory transition-colors duration-300 ${
-        darkMode ? "dark bg-black text-white" : "bg-white text-black"
-      }`}
+      className={`h-screen overflow-y-scroll scroll-smooth snap-y snap-mandatory transition-colors duration-300 ${darkMode ? "dark bg-black text-white" : "bg-white text-black"
+        }`}
     >
       {/* Navigation */}
       <nav className="fixed top-0 w-full backdrop-blur-lg bg-opacity-80 border-b dark:border-gray-800 border-gray-200 z-50">
@@ -74,46 +73,38 @@ export default function Portfolio() {
               {menuOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
             <div className="hidden md:flex items-center gap-6">
-            <button
-              onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}
-              className={`relative hover:text-teal-400 dark:hover:text-teal-300 transition-colors ${
-                activeSection === "about" ? "text-teal-600 dark:text-teal-400" : ""
-              } after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-full after:transition-all after:duration-300 ${
-                activeSection === "about" ? "after:bg-teal-600 dark:after:bg-teal-400" : "after:bg-transparent"
-              }`}
-            >
-              About
-            </button>
-            <button
-              onClick={() => document.getElementById("experience")?.scrollIntoView({ behavior: "smooth" })}
-              className={`relative hover:text-teal-400 dark:hover:text-teal-300 transition-colors ${
-                activeSection === "experience" ? "text-teal-600 dark:text-teal-400" : ""
-              } after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-full after:transition-all after:duration-300 ${
-                activeSection === "experience" ? "after:bg-teal-600 dark:after:bg-teal-400" : "after:bg-transparent"
-              }`}
-            >
-              Experience
-            </button>
-            <button
-              onClick={() => document.getElementById("skills")?.scrollIntoView({ behavior: "smooth" })}
-              className={`relative hover:text-teal-400 dark:hover:text-teal-300 transition-colors ${
-                activeSection === "skills" ? "text-teal-600 dark:text-teal-400" : ""
-              } after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-full after:transition-all after:duration-300 ${
-                activeSection === "skills" ? "after:bg-teal-600 dark:after:bg-teal-400" : "after:bg-transparent"
-              }`}
-            >
-              Skills
-            </button>
-            <button
-              onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
-              className={`relative hover:text-teal-400 dark:hover:text-teal-300 transition-colors ${
-                activeSection === "contact" ? "text-teal-600 dark:text-teal-400" : ""
-              } after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-full after:transition-all after:duration-300 ${
-                activeSection === "contact" ? "after:bg-teal-600 dark:after:bg-teal-400" : "after:bg-transparent"
-              }`}
-            >
-              Contact
-            </button>
+              <button
+                onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}
+                className={`relative hover:text-teal-400 dark:hover:text-teal-300 transition-colors ${activeSection === "about" ? "text-teal-600 dark:text-teal-400" : ""
+                  } after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-full after:transition-all after:duration-300 ${activeSection === "about" ? "after:bg-teal-600 dark:after:bg-teal-400" : "after:bg-transparent"
+                  }`}
+              >
+                About
+              </button>
+              <button
+                onClick={() => document.getElementById("experience")?.scrollIntoView({ behavior: "smooth" })}
+                className={`relative hover:text-teal-400 dark:hover:text-teal-300 transition-colors ${activeSection === "experience" ? "text-teal-600 dark:text-teal-400" : ""
+                  } after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-full after:transition-all after:duration-300 ${activeSection === "experience" ? "after:bg-teal-600 dark:after:bg-teal-400" : "after:bg-transparent"
+                  }`}
+              >
+                Experience
+              </button>
+              <button
+                onClick={() => document.getElementById("skills")?.scrollIntoView({ behavior: "smooth" })}
+                className={`relative hover:text-teal-400 dark:hover:text-teal-300 transition-colors ${activeSection === "skills" ? "text-teal-600 dark:text-teal-400" : ""
+                  } after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-full after:transition-all after:duration-300 ${activeSection === "skills" ? "after:bg-teal-600 dark:after:bg-teal-400" : "after:bg-transparent"
+                  }`}
+              >
+                Skills
+              </button>
+              <button
+                onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+                className={`relative hover:text-teal-400 dark:hover:text-teal-300 transition-colors ${activeSection === "contact" ? "text-teal-600 dark:text-teal-400" : ""
+                  } after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-full after:transition-all after:duration-300 ${activeSection === "contact" ? "after:bg-teal-600 dark:after:bg-teal-400" : "after:bg-transparent"
+                  }`}
+              >
+                Contact
+              </button>
             </div>
             <button
               onClick={() => setDarkMode(!darkMode)}
@@ -140,9 +131,8 @@ export default function Portfolio() {
                     document.getElementById(item.id)?.scrollIntoView({ behavior: "smooth" });
                     setMenuOpen(false);
                   }}
-                  className={`block w-full text-left py-2 rounded-lg px-3 hover:bg-gray-100 dark:hover:bg-gray-800 ${
-                    activeSection === item.id ? "text-teal-600 dark:text-teal-400" : ""
-                  }`}
+                  className={`block w-full text-left py-2 rounded-lg px-3 hover:bg-gray-100 dark:hover:bg-gray-800 ${activeSection === item.id ? "text-teal-600 dark:text-teal-400" : ""
+                    }`}
                 >
                   {item.label}
                 </button>
@@ -152,18 +142,18 @@ export default function Portfolio() {
         )}
       </nav>
 
-      
+
 
       {/* About Section */}
       <section
         className={`pt-32 pb-20 px-6 snap-start min-h-screen flex items-center transition-all duration-500 ${sectionTransitionClass("about")}`}
         id="about"
       >
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-5xl font-bold mb-12 flex items-center gap-3">
-              <User className="text-teal-400" />
-              About
-            </h2>
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-5xl font-bold mb-12 flex items-center gap-3">
+            <User className="text-teal-400" />
+            About
+          </h2>
           <div className="flex flex-col md:flex-row items-center gap-12 mb-12">
             <div className="flex-1">
               <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-teal-400 to-teal-600 bg-clip-text text-transparent">
@@ -185,146 +175,143 @@ export default function Portfolio() {
               />
             </div>
           </div>
-            <div className="grid md:grid-cols-1 gap-12">
-              <div className="space-y-6">
-                <p className="text-xl">
-                  With 15+ years of IT experience and 11+ focused in Salesforce,
-                  I am passionate about helping customers achieve their vision
-                  and goals using the Salesforce platform. As an experienced
-                  Architect at Salesforce, I provide platform expertise and best
-                  practice guidance on multiple Salesforce clouds and related
-                  industry products, as well as strategize key enterprise
-                  architecture tenants such as integration and data. I am always
-                  eager to learn and update my skills and knowledge, as
-                  evidenced by my multiple certifications in enterprise
-                  architecture (TOGAF 10), project management (CAPM, PSM I,
-                  SAFe), implementation (Salesforce, Azure, AWS), and ITSM
-                  (ITIL). I enjoy solving business problems in an efficient and
-                  scalable way, mixing different technologies and enhancing
-                  customer engagement, service, and marketing automation.
-                </p>
-              </div>
+          <div className="grid md:grid-cols-1 gap-12">
+            <div className="space-y-6">
+              <p className="text-xl">
+                With over 11 years of Salesforce expertise and 15+ years in IT, I specialize in guiding organizations through complex digital transformations as a Senior Salesforce Solution Architect at Salesforce. My focus lies in developing architecture blueprints, providing platform expertise, and delivering best-practice guidance. Collaborating with teams across EMEA, I contribute to creating robust governance models, integrating key enterprise architecture tenants, and leveraging innovative Salesforce features to drive success.
+                Passionate about solving business challenges with scalable, efficient solutions, I enable organizations to achieve their vision. My work emphasizes strategic platform governance, automation, and reducing technical debt to support sustainable growth. By combining technical depth with a customer-centric approach, I contribute to enhancing engagement, service delivery, and operational efficiency across industries.
+              </p>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
       {/* Experience Section */}
       <section
         className={`py-20 px-6 snap-start min-h-screen flex items-center transition-all duration-500 ${sectionTransitionClass("experience")}`}
         id="experience"
       >
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-5xl font-bold mb-12 flex items-center gap-3">
-              <Briefcase className="text-teal-400" />
-              Professional Experience
-            </h2>
-            <div className="space-y-4">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {(showAllExperience ? experience : experience.slice(0, 4)).map((exp, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setSelectedExperience(exp)}
-                    className="group p-6 bg-surface hover:bg-surface-hover border border-surface-border text-surface-foreground transition-all duration-300 hover:shadow-card-lg dark:bg-surface-dark dark:hover:bg-surface-dark-hover dark:border-surface-dark-border dark:text-surface-dark-foreground rounded-xl text-left"
-                  >
-                    <h3 className="text-2xl font-bold text-teal-600 dark:text-teal-400 mb-2 group-hover:text-teal-500">
-                      {exp.company}
-                    </h3>
-                    <p className="font-medium mb-1">
-                      {exp.role}
-                    </p>
-                    <p className="text-sm">
-                      {exp.period}
-                    </p>
-                    <div className="mt-4 flex items-center text-teal-500 text-sm font-medium">
-                      View Details
-                      <ExternalLink size={16} className="ml-1" />
-                    </div>
-                  </button>
-                ))}
-              </div>
-              {!showAllExperience && experience.length > 4 && (
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-5xl font-bold mb-12 flex items-center gap-3">
+            <Briefcase className="text-teal-400" />
+            Professional Experience
+          </h2>
+          <div className="space-y-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {(showAllExperience ? experience : experience.slice(0, 4)).map((exp, index) => (
                 <button
-                  onClick={() => setShowAllExperience(true)}
-                  className="mt-8 px-6 py-3 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-teal-400 dark:hover:border-teal-400 transition-all duration-300 w-full dark:text-gray-300 dark:text-gray-200"
+                  key={index}
+                  onClick={() => setSelectedExperience(exp)}
+                  className="group p-4 bg-surface hover:bg-surface-hover border border-surface-border text-surface-foreground transition-all duration-300 hover:shadow-card-lg dark:bg-surface-dark dark:hover:bg-surface-dark-hover dark:border-surface-dark-border dark:text-surface-dark-foreground rounded-xl text-left relative"
                 >
-                  Show More Experience
+                  <h3 className="text-xl font-bold text-teal-600 dark:text-teal-400 group-hover:text-teal-500 flex items-center">
+                    {exp.icon && (
+                      <Image
+                        src={exp.icon}
+                        alt={`${exp.company} icon`}
+                        width={24}
+                        height={24}
+                        className="mr-2 rounded-full"
+                      />
+                    )}
+                    {exp.company}
+                  </h3>
+                  <p className="font-medium mb-1">
+                    {exp.role}
+                  </p>
+                  <p className="text-sm">
+                    {exp.period}
+                  </p>
+                  <div className="mt-4 flex items-center text-teal-500 text-sm font-medium">
+                    View Details
+                    <ExternalLink size={16} className="ml-1" />
+                  </div>
                 </button>
-              )}
-              {showAllExperience && (
-                <button
-                  onClick={() => setShowAllExperience(false)}
-                  className="mt-8 px-6 py-3 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-teal-400 dark:hover:border-teal-400 transition-all duration-300 w-full dark:text-gray-300 dark:text-gray-200"
-                >
-                  Show Less
-                </button>
-              )}
+              ))}
             </div>
+            {!showAllExperience && experience.length > 4 && (
+              <button
+                onClick={() => setShowAllExperience(true)}
+                className="mt-8 px-6 py-3 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-teal-400 dark:hover:border-teal-400 transition-all duration-300 w-full dark:text-gray-300 dark:text-gray-200"
+              >
+                Show More Experience
+              </button>
+            )}
+            {showAllExperience && (
+              <button
+                onClick={() => setShowAllExperience(false)}
+                className="mt-8 px-6 py-3 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-teal-400 dark:hover:border-teal-400 transition-all duration-300 w-full dark:text-gray-300 dark:text-gray-200"
+              >
+                Show Less
+              </button>
+            )}
           </div>
-        </section>
+        </div>
+      </section>
 
-        
+
       {/* Skills Section */}
       <section
         className={`py-20 px-6 snap-start min-h-screen flex items-center transition-all duration-500 ${sectionTransitionClass("skills")}`}
         id="skills"
       >
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-5xl font-bold mb-12 flex items-center gap-3">
-              <User className="text-teal-400" />
-              Skills
-            </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {skillsByCategory.map((cat) => (
-                <div
-                  key={cat.title}
-                  className="rounded-xl p-6 bg-surface hover:bg-surface-hover border border-surface-border text-surface-foreground shadow-card-sm transition-all duration-300 hover:shadow-card-lg hover:scale-105 dark:bg-surface-dark dark:hover:bg-surface-dark-hover dark:border-surface-dark-border dark:text-surface-dark-foreground"
-                >
-                  <h3 className="text-2xl font-bold text-teal-600 dark:text-teal-400 mb-4">{cat.title}</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {cat.items.map((skill) => (
-                      <span
-                        key={skill}
-                        className="px-3 py-1 border rounded-full text-sm  dark:text-gray-300 dark:text-gray-200"
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-5xl font-bold mb-12 flex items-center gap-3">
+            <User className="text-teal-400" />
+            Skills
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {skillsByCategory.map((cat) => (
+              <div
+                key={cat.title}
+                className="rounded-xl p-6 bg-surface hover:bg-surface-hover border border-surface-border text-surface-foreground shadow-card-sm transition-all duration-300 hover:shadow-card-lg hover:scale-105 dark:bg-surface-dark dark:hover:bg-surface-dark-hover dark:border-surface-dark-border dark:text-surface-dark-foreground"
+              >
+                <h3 className="text-2xl font-bold text-teal-600 dark:text-teal-400 mb-4">{cat.title}</h3>
+                <div className="flex flex-wrap gap-2">
+                  {cat.items.map((skill) => (
+                    <span
+                      key={skill}
+                      className="px-2 py-0.5 border rounded-full text-xs dark:text-gray-300 dark:text-gray-200"
+                    >
+                      {skill}
+                    </span>
+                  ))}
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
-        </section>
-      
+        </div>
+      </section>
+
 
       {/* Contact Section */}
       <section
         className={`py-20 pb-32 px-6 snap-start min-h-screen flex items-center transition-all duration-500 ${sectionTransitionClass("contact")}`}
         id="contact"
       >
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl font-bold mb-12 flex items-center gap-3">
-              <Mail className="text-teal-400" />
-              Contact
-            </h2>
-            <div className="space-y-6 dark:text-gray-300 dark:text-gray-200">
-              <p>
-                Feel free to reach out via email:
-                {" "}
-                <a
-                  href="mailto:hola@manueltejeiro.com"
-                  className="text-teal-400 hover:text-teal-300"
-                >
-                  hola@manueltejeiro.com
-                </a>
-              </p>
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold mb-12 flex items-center gap-3">
+            <Mail className="text-teal-400" />
+            Contact
+          </h2>
+          <div className="space-y-6 dark:text-gray-300 dark:text-gray-200">
+            <p>
+              Feel free to reach out via email:
+              {" "}
+              <a
+                href="mailto:hola@manueltejeiro.com"
+                className="text-teal-400 hover:text-teal-300"
+              >
+                hola@manueltejeiro.com
+              </a>
+            </p>
 
-              <div className="flex gap-4 opacity-100 relative z-10">
-                <SocialIcons />
-              </div>
+            <div className="flex gap-4 opacity-100 relative z-10">
+              <SocialIcons />
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
       {/* Footer */}
       <footer className="fixed bottom-0 left-0 right-0 border-t border-gray-600 py-2 backdrop-blur-lg z-40">

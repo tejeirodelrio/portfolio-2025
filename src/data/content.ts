@@ -3,6 +3,7 @@ export interface Experience {
   role: string;
   period: string;
   description: string;
+  icon?: string; // Optional icon path
 }
 
 export interface Project {
@@ -21,28 +22,31 @@ export const projects: Project[] = [
   {
     title: "Salesforce",
     description: "Senior Solution Architect - EMEA Practices",
-    tech: ["Field Service", "Nonprofit Cloud", "Education Cloud"],
+    tech: ["Salesforce Architecture", "Salesforce Nonprofit Cloud", "Salesforce Education Cloud", "Salesforce Field Service", "Salesforce Data Cloud", "Agentforce", "Salesforce Industries", "Stakeholder Management"],
     link: "#",
   },
   {
     title: "Boehringer Ingelheim",
     description: "Platform Architect",
-    tech: ["Veeva CRM", "Service Cloud", "Einstein Analytics", "Salesforce Platform"],
+    tech: ["Veeva CRM", "Salesforce Architecture", "Platform Governance", "Salesforce Integration", "Stakeholder Management"],
     link: "#",
   },
   {
     title: "Coca-Cola Europacific Partners",
     description: "Platform Architect",
     tech: [
-      "Salesforce Platform",
-      "Sales Cloud",
-      "Service Cloud",
-      "Experience Cloud",
-      "Marketing Cloud",
-      "Mulesoft",
-      "Dell Boomi",
-      "Informatica Cloud",
+      "Salesforce Architecture",
+      "Salesforce Sales Cloud",
+      "Salesforce Service Cloud",
+      "Salesforce Experience Cloud",
+      "Salesforce Marketing Cloud",
+      "Salesforce Integration",
       "Heroku",
+      "Copado",
+      "ServiceMax Field Service Management",
+      "Platform Governance",
+      "Release Management",
+      "Stakeholder Management"
     ],
     link: "#",
   },
@@ -54,56 +58,67 @@ export const experience: Experience[] = [
     company: "Salesforce",
     period: "Aug 2025 - Present",
     description:
-      "Digital transformation, roadmaps and architecture, best-practice guidance across Education/Non Profit, integration & data strategy, governance.",
+      "I have successfully driven digital transformation initiatives for various clients, focusing on Salesforce solutions tailored to their unique challenges. Developed comprehensive roadmaps and architecture blueprints that align with clients' strategic visions. Offered best practice guidance on Education and Non-Profit Cloud, enhancing solution effectiveness. Innovated with new platform features, ensuring clients remain at the forefront of technology advancements.",
+    icon: "/salesforce_logo.jpeg",
   },
   {
     role: "Senior Salesforce Solution Architect, EMEA Social Impact Practice",
     company: "Salesforce",
     period: "Mar 2022 - Aug 2025",
     description:
-      "Built architecture blueprints, provided platform expertise, and guided integration/data and governance for impact-focused customers.",
+      "I have successfully driven digital transformation initiatives for various clients, focusing on Salesforce solutions tailored to their unique challenges. Developed comprehensive roadmaps and architecture blueprints that align with clients' strategic visions. Offered best practice guidance on Education and Non-Profit Cloud, enhancing solution effectiveness. Innovated with new platform features, ensuring clients remain at the forefront of technology advancements.",
+    icon: "/salesforce_logo.jpeg",
   },
   {
     role: "Salesforce Platform Lead & Technical Architect",
     company: "Boehringer Ingelheim",
     period: "Apr 2021 - Mar 2022",
     description:
-      "Owned platform governance and standards, led platform operations, drove automation and DevOps, and coordinated with partners/stakeholders.",
+      "I successfully guided the Salesforce platform as a Technical Architect, achieving notable advancements in governance and automation. Established control measures for access, licenses, and permissions, ensuring compliance and security across the multi-org landscape. Served as a key technical resource, mentoring team members and driving knowledge sharing within the SFDC Center of Excellence. Engaged in solution architecture for new applications, collaborating with enterprise architecture teams to align with business goals.",
+    icon: "/boehringer_ingelheim_logo.jpeg",
   },
   {
     role: "Salesforce Platform Architect",
     company: "Coca-Cola Europacific Partners",
     period: "Jan 2018 - Nov 2020",
     description:
-      "Ensured scalable multi‑org platform (60k+ users), improved release quality, redefined standards/frameworks, and led key portal/mobile projects.",
+      "I successfully transformed the Salesforce platform at Coca-Cola European Partners, achieving remarkable improvements in user satisfaction and system performance. Implemented a streamlined release process that reduced deployment issues by over 30%. Enhanced team collaboration by providing guidance on Salesforce capabilities, fostering a culture of trust. Played a key role in launching an iOS app and e-commerce portal, driving user engagement and satisfaction.",
+    icon: "/coca_cola_europacific_partners_logo.jpeg",
   },
   {
     role: "Salesforce Solution Architect",
     company: "Omega CRM",
     period: "Sep 2015 - Dec 2017",
     description:
-      "Trusted advisor and Scrum Master; delivered Sales/Service/Analytics implementations, integrations, and pre‑sales solutions for multiple clients.",
-  },
+      "I successfully led transformative Salesforce projects, enhancing client operations and driving growth. Served as Scrum Master for a custom Territory Management engine, ensuring project alignment with client goals. Drove the implementation of Sales Cloud and Service Cloud, resulting in improved client engagement and efficiency. Fostered a culture of knowledge sharing within the team, elevating expertise in integration and data management.",
+
+    icon: "/omega_crm_logo.jpeg",
+  }
+  ,
   {
     role: "Salesforce Consultant",
     company: "Consultia IT (Axa Assistance)",
     period: "Oct 2014 - Sep 2015",
     description:
-      "Owned Service Cloud environment, delivered Communities/Sites features, built integrations, and trained stakeholders.",
+      "I effectively managed a Salesforce Service Cloud environment, delivering impactful solutions and driving stakeholder engagement. Prioritized and translated business requirements into actionable deliverables, ensuring timely project completion. Developed integrations with external systems, enhancing overall functionality and user experience. Trained stakeholders on best practices, fostering a culture of continuous improvement and collaboration.",
+
+    icon: "/consultia_it_logo.jpeg",
   },
   {
     role: "Veeva & Salesforce Admin",
     company: "Accenture (Novartis)",
     period: "Mar 2013 - Oct 2014",
     description:
-      "Supported Veeva CRM roll‑out, enhanced CRM (sharing, profiles, Apex/Visualforce), built Oracle integrations, and trained EU users.",
+      "I successfully contributed to Novartis's Salesforce implementation as a Veeva & Salesforce Admin at Accenture, achieving significant user engagement and system efficiency. Streamlined the Veeva CRM rollout for multiple European countries, ensuring a smooth transition. Created and optimized data integrations with Oracle, enhancing data flow and reporting capabilities. Developed strong relationships with users, providing training and rapid issue resolution to maximize CRM utilization.",
+    icon: "/accenture_logo.jpeg",
   },
   {
     role: "Software Architecture",
     company: "Accenture (FREMAP)",
     period: "Nov 2009 - May 2014",
     description:
-      "Responsible for legacy architecture modernization and new web architecture development. Windows and Linux administration",
+      "I successfully transformed the software architecture landscape for Sociedad de Prevención de FREMAP, driving significant operational improvements. Increased user productivity by developing .NET applications for automated data management and document processing. Enhanced system performance by optimizing Active Directory Policies and migrating legacy scripts to PowerShell. Reduced administrative workload through centralized printer management, creating a user-friendly application for printer assignment.",
+    icon: "/accenture_logo.jpeg",
   },
 ];
 
@@ -111,52 +126,67 @@ export const skillsByCategory: SkillCategory[] = [
   {
     title: "Salesforce",
     items: [
-      "Sales Cloud",
-      "Service Cloud",
-      "Experience Cloud",
-      "Field Service",
-      "Nonprofit Cloud",
-      "Education Cloud",
-      "Apex",
-      "Lightning Web Components (LWC)",
-      "Flows",
-      "Platform Events",
-      "Integration (REST/SOAP/OAuth)",
-      "Data Modeling & Security",
-      "Identity & Access (SSO/SAML/OIDC)",
-    ],
-  },
-  {
-    title: "Development",
-    items: [
-      "JavaScript",
-      "TypeScript",
-      "React",
-      "Node.js",
-      "Next.js",
-      "REST APIs",
-      "GraphQL",
-      "Testing (Jest)",
-      "CI/CD",
-    ],
-  },
-  {
-    title: "Database",
-    items: ["SQL", "PostgreSQL", "MongoDB", "ETL", "Data Modeling"],
-  },
-  {
-    title: "Cloud",
-    items: [
+      "Salesforce Architecture",
+      "Salesforce Solution Architecture",
       "Salesforce Platform",
-      "AWS",
-      "Azure",
-      "Heroku",
-      "MuleSoft",
-      "GitHub Actions",
+      "Salesforce Development",
+      "Agentforce",
+      "Salesforce Data Cloud",
+      "Salesforce Industries",
+      "Salesforce Service Cloud",
+      "Salesforce Field Service",
+      "Salesforce Education Cloud",
+      "Salesforce Nonprofit Cloud",
+      "Salesforce B2B Commerce",
+      "Salesforce Marketing Cloud",
+      "Salesforce Sales Cloud",
+      "Salesforce Experience Cloud",
+      "Salesforce CRM Analytics",
+      "Heroku"
     ],
   },
   {
-    title: "Project Management",
-    items: ["Agile", "Scrum", "Kanban", "SAFe", "CAPM", "Stakeholder Management"],
+    title: "Software Development & Architecture",
+    items: [
+      "Enterprise Architecture",
+      "TOGAF",
+      "Data Management",
+      "Data Migration",
+      "Data Architecture",
+      "Cloud Computing",
+      "Amazon Web Services (AWS)",
+      "Microsoft Azure",
+      "DevOps",
+      "CI/CD",
+      "IT Integration",
+      "Software Development Life Cycle (SDLC)",
+      "Application Lifecycle Management",
+      "Shell Scripting",
+      "Unix Administration",
+      ".NET Framework",
+      "Windows System Administration",
+      "Web Components",
+      "Java",
+      "C#",
+      "SQL",
+      "Web Services"
+    ],
+  },
+  {
+    title: "Project Management & Consulting",
+    items: [
+      "Digital Transformation",
+      "Consulting",
+      "Pre-Sales Technical Consulting",
+      "Stakeholder Management",
+      "Platform Governance",
+      "Roadmap Development",
+      "Requirements Prioritization",
+      "Technical Leadership",
+      "Release Management",
+      "Agile Methodologies",
+      "Technical Debt Management",
+      "End User Training",
+    ],
   },
 ];
