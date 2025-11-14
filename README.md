@@ -1,4 +1,8 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Manuel Tejeiro Del Río - Personal Portfolio
+
+This project is a personal portfolio website for Manuel Tejeiro Del Río, a Salesforce Architect. It showcases his professional experience, skills, and contact information.
+
+This project was bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
 
