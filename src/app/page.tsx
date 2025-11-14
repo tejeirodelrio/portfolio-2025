@@ -150,7 +150,7 @@ export default function Portfolio() {
         id="about"
       >
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-5xl font-bold mb-12 flex items-center gap-3">
+          <h2 className="text-4xl font-bold mb-12 flex items-center gap-3">
             <User className="text-teal-400" />
             About
           </h2>
@@ -192,7 +192,7 @@ export default function Portfolio() {
         id="experience"
       >
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-5xl font-bold mb-12 flex items-center gap-3">
+          <h2 className="text-4xl font-bold mb-12 flex items-center gap-3">
             <Briefcase className="text-teal-400" />
             Professional Experience
           </h2>
@@ -256,7 +256,7 @@ export default function Portfolio() {
         id="skills"
       >
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-5xl font-bold mb-12 flex items-center gap-3">
+          <h2 className="text-4xl font-bold mb-12 flex items-center gap-3">
             <User className="text-teal-400" />
             Skills
           </h2>
@@ -290,7 +290,7 @@ export default function Portfolio() {
         id="contact"
       >
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold mb-12 flex items-center gap-3">
+          <h2 className="text-3xl font-bold mb-12 flex items-center gap-3">
             <Mail className="text-teal-400" />
             Contact
           </h2>
