@@ -22,11 +22,6 @@ export default function Portfolio() {
   const [selectedExperience, setSelectedExperience] = useState<Experience | null>(null);
 
 
-  const sectionTransitionClass = (id: string) =>
-    id === "about" || activeSection === id
-      ? "opacity-100 translate-y-0"
-      : "opacity-40 translate-y-4";
-
   useEffect(() => {
     const sectionIds = ["about", "experience", "skills", "contact"];
     const root = document.getElementById("scroll-container") || undefined;
@@ -146,7 +141,7 @@ export default function Portfolio() {
 
       {/* About Section */}
       <section
-        className={`pt-32 pb-20 px-6 snap-start min-h-screen flex items-center transition-all duration-500 ${sectionTransitionClass("about")}`}
+        className={`pt-32 pb-20 px-6 snap-start min-h-screen flex items-center`}
         id="about"
       >
         <div className="max-w-6xl mx-auto">
@@ -188,7 +183,7 @@ export default function Portfolio() {
 
       {/* Experience Section */}
       <section
-        className={`py-20 px-6 snap-start min-h-screen flex items-center transition-all duration-500 ${sectionTransitionClass("experience")}`}
+        className={`py-20 px-6 snap-start min-h-screen flex items-center`}
         id="experience"
       >
         <div className="max-w-6xl mx-auto">
@@ -232,7 +227,7 @@ export default function Portfolio() {
             {!showAllExperience && experience.length > 4 && (
               <button
                 onClick={() => setShowAllExperience(true)}
-                className="mt-8 px-6 py-3 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-teal-400 dark:hover:border-teal-400 transition-all duration-300 w-full dark:text-gray-300 dark:text-gray-200"
+                className="mt-8 px-4 py-2 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-teal-400 dark:hover:border-teal-400 transition-all duration-300 w-full text-sm"
               >
                 Show More Experience
               </button>
@@ -240,7 +235,7 @@ export default function Portfolio() {
             {showAllExperience && (
               <button
                 onClick={() => setShowAllExperience(false)}
-                className="mt-8 px-6 py-3 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-teal-400 dark:hover:border-teal-400 transition-all duration-300 w-full dark:text-gray-300 dark:text-gray-200"
+                className="mt-8 px-4 py-2 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-teal-400 dark:hover:border-teal-400 transition-all duration-300 w-full text-sm"
               >
                 Show Less
               </button>
@@ -252,7 +247,7 @@ export default function Portfolio() {
 
       {/* Skills Section */}
       <section
-        className={`py-20 px-6 snap-start min-h-screen flex items-center transition-all duration-500 ${sectionTransitionClass("skills")}`}
+        className={`py-20 px-6 snap-start min-h-screen flex items-center`}
         id="skills"
       >
         <div className="max-w-6xl mx-auto">
@@ -271,7 +266,7 @@ export default function Portfolio() {
                   {cat.items.map((skill) => (
                     <span
                       key={skill}
-                      className="px-2 py-0.5 border rounded-full text-xs dark:text-gray-300 dark:text-gray-200"
+                      className="px-2 py-0.5 border rounded-full text-xs "
                     >
                       {skill}
                     </span>
@@ -286,7 +281,7 @@ export default function Portfolio() {
 
       {/* Contact Section */}
       <section
-        className={`py-20 pb-32 px-6 snap-start min-h-screen flex items-center transition-all duration-500 ${sectionTransitionClass("contact")}`}
+        className={`py-20 pb-32 px-6 snap-start min-h-screen flex items-center`}
         id="contact"
       >
         <div className="max-w-6xl mx-auto">
