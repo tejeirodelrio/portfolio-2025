@@ -18,55 +18,17 @@ export interface SkillCategory {
   items: string[];
 }
 
-export const projects: Project[] = [
-  {
-    title: "Salesforce",
-    description: "Senior Solution Architect - EMEA Practices",
-    tech: ["Salesforce Architecture", "Salesforce Nonprofit Cloud", "Salesforce Education Cloud", "Salesforce Field Service", "Salesforce Data Cloud", "Agentforce", "Salesforce Industries", "Stakeholder Management"],
-    link: "#",
-  },
-  {
-    title: "Boehringer Ingelheim",
-    description: "Platform Architect",
-    tech: ["Veeva CRM", "Salesforce Architecture", "Platform Governance", "Salesforce Integration", "Stakeholder Management"],
-    link: "#",
-  },
-  {
-    title: "Coca-Cola Europacific Partners",
-    description: "Platform Architect",
-    tech: [
-      "Salesforce Architecture",
-      "Salesforce Sales Cloud",
-      "Salesforce Service Cloud",
-      "Salesforce Experience Cloud",
-      "Salesforce Marketing Cloud",
-      "Salesforce Integration",
-      "Heroku",
-      "Copado",
-      "ServiceMax Field Service Management",
-      "Platform Governance",
-      "Release Management",
-      "Stakeholder Management"
-    ],
-    link: "#",
-  },
-];
+export const bioDescription = `With over 12 years of Salesforce expertise and 16+ years in IT, I specialize in guiding organizations through complex digital transformations as a Senior Salesforce Solution Architect at Salesforce. My focus lies in developing architecture blueprints, providing platform expertise, and delivering best-practice guidance. Collaborating with teams across EMEA, I contribute to creating robust governance models, integrating key enterprise architecture tenants, and leveraging innovative Salesforce features to drive success.
+                Passionate about solving business challenges with scalable, efficient solutions, I enable organizations to achieve their vision. My work emphasizes strategic platform governance, automation, and reducing technical debt to support sustainable growth. By combining technical depth with a customer-centric approach, I contribute to enhancing engagement, service delivery, and operational efficiency across industries.`;
+
 
 export const experience: Experience[] = [
   {
-    role: "Senior Salesforce Solution Architect, Field Service & Voice, EMEA Practices",
+    role: "Senior Salesforce Solution Architect, EMEA Practices",
     company: "Salesforce",
-    period: "Aug 2025 - Present",
+    period: "Mar 2022 - Present",
     description:
-      "I have successfully driven digital transformation initiatives for various clients, focusing on Salesforce solutions tailored to their unique challenges. Developed comprehensive roadmaps and architecture blueprints that align with clients' strategic visions. Offered best practice guidance on Education and Non-Profit Cloud, enhancing solution effectiveness. Innovated with new platform features, ensuring clients remain at the forefront of technology advancements.",
-    icon: "/salesforce_logo.jpeg",
-  },
-  {
-    role: "Senior Salesforce Solution Architect, EMEA Social Impact Practice",
-    company: "Salesforce",
-    period: "Mar 2022 - Aug 2025",
-    description:
-      "I have successfully driven digital transformation initiatives for various clients, focusing on Salesforce solutions tailored to their unique challenges. Developed comprehensive roadmaps and architecture blueprints that align with clients' strategic visions. Offered best practice guidance on Education and Non-Profit Cloud, enhancing solution effectiveness. Innovated with new platform features, ensuring clients remain at the forefront of technology advancements.",
+      "I have successfully driven digital transformation initiatives for various clients, focusing on Salesforce solutions tailored to their unique challenges. Developed comprehensive roadmaps and architecture blueprints that align with clients' strategic visions. Offered best practice guidance on Education and Nonprofit Cloud as well as Field Service, senhancing solution effectiveness. Innovated with new platform features, ensuring clients remain at the forefront of technology advancements.",
     icon: "/salesforce_logo.jpeg",
   },
   {

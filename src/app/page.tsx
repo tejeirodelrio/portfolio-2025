@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import SocialIcons from "@/components/SocialIcons";
 import Image from "next/image";
-import { Experience, experience, skillsByCategory } from "@/data/content";
+import { Experience, experience, skillsByCategory, bioDescription } from "@/data/content";
 import {
   Mail,
   Moon,
@@ -173,8 +173,7 @@ export default function Portfolio() {
           <div className="grid md:grid-cols-1 gap-12">
             <div className="space-y-6">
               <p className="text-xl">
-                With over 11 years of Salesforce expertise and 15+ years in IT, I specialize in guiding organizations through complex digital transformations as a Senior Salesforce Solution Architect at Salesforce. My focus lies in developing architecture blueprints, providing platform expertise, and delivering best-practice guidance. Collaborating with teams across EMEA, I contribute to creating robust governance models, integrating key enterprise architecture tenants, and leveraging innovative Salesforce features to drive success.
-                Passionate about solving business challenges with scalable, efficient solutions, I enable organizations to achieve their vision. My work emphasizes strategic platform governance, automation, and reducing technical debt to support sustainable growth. By combining technical depth with a customer-centric approach, I contribute to enhancing engagement, service delivery, and operational efficiency across industries.
+                {bioDescription}
               </p>
             </div>
           </div>
